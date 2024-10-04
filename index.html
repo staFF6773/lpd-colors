@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LPD Color Reference</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="twitter:title" content="LPD Color Palette">
+    <meta name="twitter:description" content="A quick reference for LPD colors (Extracted from the LPD Avatar Guidelines document)">
+    <meta name="twitter:image" content="https://cdn.myuu.moe/lpd.gif">
+    <meta name="twitter:color" content="#1E2D4C">
+
+</head>
+<body>
+<div class="color-grid">
+    <div class="color-box" style="background-color: #1E2D4C;" onclick="copyColor(this)">
+        <p class="color-name">LPD Blue</p>
+        <p class="color-hex">#1E2D4C</p>
+    </div>
+    <div class="color-box" style="background-color: #0C142D;" onclick="copyColor(this)">
+        <p class="color-name">LPD Blue</p>
+        <p class="color-hex">#0C142D</p>
+    </div>
+    <div class="color-box" style="background-color: #FBC51C;" onclick="copyColor(this)">
+        <p class="color-name">LPD Gold</p>
+        <p class="color-hex">#FBC51C</p>
+    </div>
+    <div class="color-box" style="background-color: #AAA9AD;" onclick="copyColor(this)">
+        <p class="color-name">LPD Silver</p>
+        <p class="color-hex">#AAA9AD</p>
+    </div>
+    <div class="color-box" style="background-color: #7C6C64;" onclick="copyColor(this)">
+        <p class="color-name">LPD Prison Gray</p>
+        <p class="color-hex">#7C6C64</p>
+    </div>
+    <div class="color-box" style="background-color: #010917;" onclick="copyColor(this)">
+        <p class="color-name">LPD Dress Uniform Dark Blue</p>
+        <p class="color-hex">#010917</p>
+    </div>
+    <div class="color-box" style="background-color: #0F4B2A;" onclick="copyColor(this)">
+        <p class="color-name">LMT Green</p>
+        <p class="color-hex">#0F4B2A</p>
+    </div>
+    <div class="color-box" style="background-color: #98BB01;" onclick="copyColor(this)">
+        <p class="color-name">LMT Green 2</p>
+        <p class="color-hex">#98BB01</p>
+    </div>
+    <div class="color-box" style="background-color: #343433;" onclick="copyColor(this)">
+        <p class="color-name">SLRT Gray</p>
+        <p class="color-hex">#343433</p>
+    </div>
+    <div class="color-box" style="background-color: #232820;" onclick="copyColor(this)">
+        <p class="color-name">CO Stab Vest (optional)</p>
+        <p class="color-hex">#232820</p>
+    </div>
+    <div class="color-box" style="background-color: #6489B6;" onclick="copyColor(this)">
+        <p class="color-name">Medical Glove (optional)</p>
+        <p class="color-hex">#6489B6</p>
+    </div>
+    <div class="color-box" style="background-color: #A586D5;" onclick="copyColor(this)">
+        <p class="color-name">Medical Glove (optional)</p>
+        <p class="color-hex">#A586D5</p>
+    </div>
+    <div class="color-box" style="background-color: #A0D15A;" onclick="copyColor(this)">
+        <p class="color-name">Medical Glove (optional)</p>
+        <p class="color-hex">#A0D15A</p>
+    </div>
+    <div class="color-box" style="background-color: #BBB8AF;" onclick="copyColor(this)">
+        <p class="color-name">Reflective Stripe White</p>
+        <p class="color-hex">#BBB8AF</p>
+    </div>
+    <div class="color-box" style="background-color: #928B7F;" onclick="copyColor(this)">
+        <p class="color-name">Reflective Stripe Gray</p>
+        <p class="color-hex">#928B7F</p>
+    </div>
+    <!-- Add more colors as needed -->
+</div>
+<div class="footer">
+    Colors are taken from the official LPD guidelines document but are not synchronized automatically 
+    | 
+    Made by <code>myuuiii</code> on Discord
+</div>
+
+<script>
+    function copyColor(element) {
+        const hexCode = element.querySelector('.color-hex').textContent.slice(1);
+        navigator.clipboard.writeText(hexCode).then(() => {
+            const originalText = element.querySelector('.color-hex').textContent;
+            element.querySelector('.color-hex').textContent = 'Copied';
+            setTimeout(() => {
+                element.querySelector('.color-hex').textContent = originalText;
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+</body>
+</html>

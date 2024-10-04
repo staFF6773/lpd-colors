@@ -1,0 +1,8 @@
+﻿services:
+  lpd-colors:
+    image: registry.myuuiii.com/myuu/lpd-colors
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5024:80
