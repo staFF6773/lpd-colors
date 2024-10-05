@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,6 +25,27 @@ html, body {
     color: white;
     height: 100%;
     width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.copied-message {
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+
+.color-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 .color-name {
@@ -38,15 +59,18 @@ html, body {
 }
 
 .description-btn {
-    padding: 5px 10px;
+    padding: 8px 12px;
     background-color: rgba(255, 255, 255, 0.3);
     border: none;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .description-btn:hover {
     background-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 .footer {
