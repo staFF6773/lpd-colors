@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,7 +85,23 @@
         const hexCode = element.querySelector('.color-hex').textContent.slice(1);
         navigator.clipboard.writeText(hexCode).then(() => {
             const originalText = element.querySelector('.color-hex').textContent;
-            element.querySelector('.color-hex').textContent = 'Copied';
+            const messageBox = document.createElement('div');
+            messageBox.className = 'copied-message';
+            messageBox.textContent = 'Copied!';
+            
+            element.appendChild(messageBox);
+
+            requestAnimationFrame(() => {
+                messageBox.style.opacity = 1;
+            });
+
+            setTimeout(() => {
+                messageBox.style.opacity = 0;
+                setTimeout(() => {
+                    element.removeChild(messageBox);
+                }, 300);
+            }, 2000);
+
             setTimeout(() => {
                 element.querySelector('.color-hex').textContent = originalText;
             }, 2000);
